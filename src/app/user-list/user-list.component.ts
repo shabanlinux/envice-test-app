@@ -57,7 +57,7 @@ export class UserListComponent implements OnInit {
       .delete(params)
       .subscribe(
         (res: any) => {
-          this.users();
+          this.getUsers();
           this.sweetAlert({icon: 'success', title: 'DELETED!!!', text: 'Account Deleted Successfully'});
         },
         err => {

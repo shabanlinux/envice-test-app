@@ -21,6 +21,8 @@ export class UserEditComponent implements OnInit {
 
   public age: any = [];
 
+  public user: any;
+
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -39,7 +41,6 @@ export class UserEditComponent implements OnInit {
       .params
       .subscribe(
         (res: any) => {
-          console.log(res);
           this.getUser(res.contact);
         }
       );
@@ -69,20 +70,20 @@ export class UserEditComponent implements OnInit {
             return;
           }
 
-          const data = res.payload[0];
-
+          this.user = res.payload[0];
           this.editForm.patchValue({
-            name: data.name,
-            email: data.email,
-            contact: data.contact,
-            otherContact: data.otherContact,
-            empId: data.empId,
-            gender: data.gender,
-            age: data.age,
+            name: this.user.name,
+            email: this.user.email,
+            contact: this.user.contact,
+            otherContact: this.user.otherContact,
+            empId: this.user.empId,
+            gender: this.user.gender,
+            age: this.user.age,
           });
-        }
-      )
 
+          this.editForm.controls['contact'].disable();
+        }
+      );
   }
 
   submit() {
@@ -91,10 +92,12 @@ export class UserEditComponent implements OnInit {
     const data = {
      ...this.editForm.value,
      age: parseInt(this.editForm.value.age, 10),
+     contact: parseInt(this.user.contact, 10),
+     otherContact: parseInt(this.editForm.value.otherContact, 10),
     }
 
     this._userService
-      .add(data)
+      .edit(data)
       .subscribe(
         (res: any) => {
           this.sweetAlert({icon: 'success', title: 'YEAH!!!', text: 'Account Updated Successfully'});
