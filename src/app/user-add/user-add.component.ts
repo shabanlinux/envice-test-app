@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, MaxLengthValidator } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { FormErrors } from '../shared/utils/FormErrorVar';
@@ -41,7 +41,7 @@ export class UserAddComponent implements OnInit {
       email: [null, [Validators.required, CustomValidators.emailValidator]],
       contact: [null, [Validators.required, CustomValidators.phoneValidator]],
       otherContact: [null, [Validators.required, CustomValidators.phoneValidator]],
-      empId: [null, [Validators.required]],
+      empId: [null, [Validators.required, Validators.maxLength(10)]],
       gender: ["Male", [Validators.required]],
       age: [null, [Validators.required, CustomValidators.onlyNumberValidator]],
     });

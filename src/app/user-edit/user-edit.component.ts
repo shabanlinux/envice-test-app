@@ -52,7 +52,7 @@ export class UserEditComponent implements OnInit {
       email: [null, [Validators.required, CustomValidators.emailValidator]],
       contact: [null, [Validators.required, CustomValidators.phoneValidator]],
       otherContact: [null, [Validators.required, CustomValidators.phoneValidator]],
-      empId: [null, [Validators.required]],
+      empId: [null, [Validators.required, Validators.maxLength(10)]],
       gender: ["Male", [Validators.required]],
       age: [null, [Validators.required, CustomValidators.onlyNumberValidator]],
     });

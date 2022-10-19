@@ -9,6 +9,7 @@ export class CustomValidationMessages {
     },
     empId: {
       required: "Employee ID is required",
+      maxlength: "Emploee ID cannot be greater than 10 characters",
     },
     gender: {
       required: "Gender is required",

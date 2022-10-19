@@ -27,7 +27,7 @@
                       (input)="logValidationErrors()"
                     />
                 </div>
-                <div class="alert alert-primary" role="alert" *ngIf="formErrors.name">
+                <div class="alert alert-danger" role="alert" *ngIf="formErrors.name">
                   {{ formErrors.name }}
                 </div>
 
@@ -42,7 +42,7 @@
                       (input)="logValidationErrors()"
                     />
                 </div>
-                <div class="alert alert-primary" role="alert" *ngIf="formErrors.email">
+                <div class="alert alert-danger" role="alert" *ngIf="formErrors.email">
                   {{ formErrors.email }}
                 </div>
 
@@ -57,7 +57,7 @@
                       (input)="logValidationErrors()"
                     />
                 </div>
-                <div class="alert alert-primary" role="alert" *ngIf="formErrors.empId">
+                <div class="alert alert-danger" role="alert" *ngIf="formErrors.empId">
                   {{ formErrors.empId }}
                 </div>
 
@@ -72,7 +72,7 @@
                       (input)="logValidationErrors()"
                     />
                 </div>
-                <div class="alert alert-primary" role="alert" *ngIf="formErrors.contact">
+                <div class="alert alert-danger" role="alert" *ngIf="formErrors.contact">
                   {{ formErrors.contact }}
                 </div>
 
@@ -87,7 +87,7 @@
                       (input)="logValidationErrors()"
                     />
                 </div>
-                <div class="alert alert-primary" role="alert" *ngIf="formErrors.otherContact">
+                <div class="alert alert-danger" role="alert" *ngIf="formErrors.otherContact">
                   {{ formErrors.otherContact }}
                 </div>
 
@@ -106,7 +106,7 @@
                       </label>
                     </div>
                 </div>
-                <div class="alert alert-primary" role="alert" *ngIf="formErrors.gender">
+                <div class="alert alert-danger" role="alert" *ngIf="formErrors.gender">
                   {{ formErrors.gender }}
                 </div>
 
@@ -120,7 +120,7 @@
                         </ng-container>
                     </select>
                 </div>
-                <div class="alert alert-primary" role="alert" *ngIf="formErrors.age">
+                <div class="alert alert-danger" role="alert" *ngIf="formErrors.age">
                   {{ formErrors.age }}
                 </div>
 
