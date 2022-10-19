@@ -1,0 +1,138 @@
+<div class="container-fluid mt-4">
+    <div class="card">
+      <div class="card-header text-right">
+        <ul class="nav nav-pills card-header-pills">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/">Back</a>
+          </li>
+        </ul>
+      </div>
+  
+      <div class="card-body">
+        <form [formGroup]="editForm" (submit)="submit()">
+          <div class="row">
+              <div class="col-md-3"></div>
+              <div class="col-md-6">
+                  <h1>Create New User</h1>
+  
+                  <div class="mb-3">
+                      <label for="username" class="form-label">Name</label>
+                      <input
+                        type="text"
+                        formControlName="name"
+                        class="form-control"
+                        id="username"
+                        placeholder="Shanks"
+                        (input)="logValidationErrors()"
+                      />
+                  </div>
+                  <div class="alert alert-primary" role="alert" *ngIf="formErrors.name">
+                    {{ formErrors.name }}
+                  </div>
+  
+                  <div class="mb-3">
+                      <label for="email" class="form-label">Email</label>
+                      <input
+                        type="text"
+                        formControlName="email"
+                        class="form-control"
+                        id="email"
+                        placeholder="shanks@example.com"
+                        (input)="logValidationErrors()"
+                      />
+                  </div>
+                  <div class="alert alert-primary" role="alert" *ngIf="formErrors.email">
+                    {{ formErrors.email }}
+                  </div>
+  
+                  <div class="mb-3">
+                      <label for="empId" class="form-label">Employee ID</label>
+                      <input
+                        type="text"
+                        formControlName="empId"
+                        class="form-control"
+                        id="empId"
+                        placeholder="shanks761"
+                        (input)="logValidationErrors()"
+                      />
+                  </div>
+                  <div class="alert alert-primary" role="alert" *ngIf="formErrors.empId">
+                    {{ formErrors.empId }}
+                  </div>
+  
+                  <div class="mb-3">
+                      <label for="contact" class="form-label">Contact</label>
+                      <input
+                        type="number"
+                        formControlName="contact"
+                        class="form-control"
+                        id="contact"
+                        placeholder="8840000761"
+                        (input)="logValidationErrors()"
+                      />
+                  </div>
+                  <div class="alert alert-primary" role="alert" *ngIf="formErrors.contact">
+                    {{ formErrors.contact }}
+                  </div>
+  
+                  <div class="mb-3">
+                      <label for="contact2" class="form-label">Other Contact</label>
+                      <input
+                        type="number"
+                        formControlName="otherContact"
+                        class="form-control"
+                        id="contact2"
+                        placeholder="8840000762"
+                        (input)="logValidationErrors()"
+                      />
+                  </div>
+                  <div class="alert alert-primary" role="alert" *ngIf="formErrors.otherContact">
+                    {{ formErrors.otherContact }}
+                  </div>
+  
+                  <div class="mb-3">
+                    <label for="gender" class="form-label">Gender</label>
+                    <div class="form-check ">
+                        <input class="form-check-input" type="radio" formControlName="gender" name="gender" value="Male" id="male">
+                        <label class="form-check-label" for="male">
+                          Male
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" formControlName="gender" name="gender" value="Female" id="female">
+                        <label class="form-check-label" for="female">
+                          Female
+                        </label>
+                      </div>
+                  </div>
+                  <div class="alert alert-primary" role="alert" *ngIf="formErrors.gender">
+                    {{ formErrors.gender }}
+                  </div>
+  
+                  <div class="mb-3">
+                      <label for="age" class="form-label">Age</label>
+                      <select class="form-select" formControlName="age">
+                          <option value="" selected>Select Your Age</option>
+  
+                          <ng-container *ngFor="let item of age">
+                              <option [value]="item">{{ item }}</option>
+                          </ng-container>
+                      </select>
+                  </div>
+                  <div class="alert alert-primary" role="alert" *ngIf="formErrors.age">
+                    {{ formErrors.age }}
+                  </div>
+  
+                  <button type="submit" class="btn btn-success">Save</button>
+  
+              </div>
+          </div>
+        </form>
+        
+      </div>
+  
+      <div class="card-footer">
+      </div>
+    </div>
+  </div>
+  
